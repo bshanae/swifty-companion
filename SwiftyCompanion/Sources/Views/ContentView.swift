@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct ContentView: View {
+	@State private var searchText = ""
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+		SearchBar(text: $searchText)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+		ContentView()
     }
 }

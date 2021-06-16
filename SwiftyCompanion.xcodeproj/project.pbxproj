@@ -11,6 +11,7 @@
 		D11F09DC267A663C00B1A8A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F09DB267A663C00B1A8A5 /* ContentView.swift */; };
 		D11F09DE267A663C00B1A8A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11F09DD267A663C00B1A8A5 /* Assets.xcassets */; };
 		D11F09E1267A663C00B1A8A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11F09E0267A663C00B1A8A5 /* Preview Assets.xcassets */; };
+		D1659F9F267A690800614754 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1659F9E267A690800614754 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		D11F09DD267A663C00B1A8A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D11F09E0267A663C00B1A8A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D11F09E2267A663C00B1A8A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1659F9E267A690800614754 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +54,10 @@
 		D11F09D8267A663C00B1A8A5 /* SwiftyCompanion */ = {
 			isa = PBXGroup;
 			children = (
-				D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */,
-				D11F09DB267A663C00B1A8A5 /* ContentView.swift */,
-				D11F09DD267A663C00B1A8A5 /* Assets.xcassets */,
 				D11F09E2267A663C00B1A8A5 /* Info.plist */,
+				D11F09DD267A663C00B1A8A5 /* Assets.xcassets */,
 				D11F09DF267A663C00B1A8A5 /* Preview Content */,
+				D1659F9A267A686000614754 /* Sources */,
 			);
 			path = SwiftyCompanion;
 			sourceTree = "<group>";
@@ -67,6 +68,40 @@
 				D11F09E0267A663C00B1A8A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D1659F9A267A686000614754 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D1659F9D267A687200614754 /* App */,
+				D1659F9C267A686B00614754 /* Views */,
+				D1659F9B267A686500614754 /* Models */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D1659F9B267A686500614754 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D1659F9C267A686B00614754 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D11F09DB267A663C00B1A8A5 /* ContentView.swift */,
+				D1659F9E267A690800614754 /* SearchBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D1659F9D267A687200614754 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +175,7 @@
 			files = (
 				D11F09DC267A663C00B1A8A5 /* ContentView.swift in Sources */,
 				D11F09DA267A663C00B1A8A5 /* SwiftyCompanionApp.swift in Sources */,
+				D1659F9F267A690800614754 /* SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +304,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"swifty-companion/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/SwiftyCompanion/Preview Content\"";
 				DEVELOPMENT_TEAM = NF7LW7M6W8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "swifty-companion/Info.plist";
+				INFOPLIST_FILE = SwiftyCompanion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -290,10 +326,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"swifty-companion/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/SwiftyCompanion/Preview Content\"";
 				DEVELOPMENT_TEAM = NF7LW7M6W8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "swifty-companion/Info.plist";
+				INFOPLIST_FILE = SwiftyCompanion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
