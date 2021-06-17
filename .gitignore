@@ -21,3 +21,6 @@ DerivedData/
 !default.perspectivev3
 
 /*.gcno
+
+Podfile.lock
+Pods

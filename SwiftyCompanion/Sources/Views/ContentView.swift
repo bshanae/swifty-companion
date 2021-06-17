@@ -1,10 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State private var searchText = ""
-
     var body: some View {
-		SearchBar(text: $searchText)
+		SearchPage()
     }
 }
 
