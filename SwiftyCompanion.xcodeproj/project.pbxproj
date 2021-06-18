@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,7 @@
 		D105C011267BF9A600FFCDF9 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00B267BF9A600FFCDF9 /* AuthData.swift */; };
 		D105C012267BF9A600FFCDF9 /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00C267BF9A600FFCDF9 /* ProjectData.swift */; };
 		D105C013267BF9A600FFCDF9 /* SkillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00D267BF9A600FFCDF9 /* SkillData.swift */; };
-		D105C014267BF9A600FFCDF9 /* CurcusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00E267BF9A600FFCDF9 /* CurcusData.swift */; };
+		D105C014267BF9A600FFCDF9 /* CurcusUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00E267BF9A600FFCDF9 /* CurcusUserData.swift */; };
 		D105C015267BF9A600FFCDF9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00F267BF9A600FFCDF9 /* UserData.swift */; };
 		D105C019267BF9C200FFCDF9 /* School42Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C017267BF9C200FFCDF9 /* School42Service.swift */; };
 		D105C01A267BF9C200FFCDF9 /* TokenWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C018267BF9C200FFCDF9 /* TokenWrapper.swift */; };
@@ -31,7 +31,7 @@
 		D105C00B267BF9A600FFCDF9 /* AuthData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
 		D105C00C267BF9A600FFCDF9 /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
 		D105C00D267BF9A600FFCDF9 /* SkillData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillData.swift; sourceTree = "<group>"; };
-		D105C00E267BF9A600FFCDF9 /* CurcusData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurcusData.swift; sourceTree = "<group>"; };
+		D105C00E267BF9A600FFCDF9 /* CurcusUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurcusUserData.swift; sourceTree = "<group>"; };
 		D105C00F267BF9A600FFCDF9 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		D105C017267BF9C200FFCDF9 /* School42Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School42Service.swift; sourceTree = "<group>"; };
 		D105C018267BF9C200FFCDF9 /* TokenWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenWrapper.swift; sourceTree = "<group>"; };
@@ -70,11 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				D105C00B267BF9A600FFCDF9 /* AuthData.swift */,
-				D105C00E267BF9A600FFCDF9 /* CurcusData.swift */,
-				D105C00C267BF9A600FFCDF9 /* ProjectData.swift */,
-				D105C00A267BF9A600FFCDF9 /* ProjectUserData.swift */,
-				D105C00D267BF9A600FFCDF9 /* SkillData.swift */,
 				D105C00F267BF9A600FFCDF9 /* UserData.swift */,
+				D105C00E267BF9A600FFCDF9 /* CurcusUserData.swift */,
+				D105C00A267BF9A600FFCDF9 /* ProjectUserData.swift */,
+				D105C00C267BF9A600FFCDF9 /* ProjectData.swift */,
+				D105C00D267BF9A600FFCDF9 /* SkillData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -184,7 +184,6 @@
 				DE84FEA721B25FA3F876529E /* Pods-swifty-companion.debug.xcconfig */,
 				BDF2FFDED82086A97949E55A /* Pods-swifty-companion.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -302,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D105C010267BF9A600FFCDF9 /* ProjectUserData.swift in Sources */,
-				D105C014267BF9A600FFCDF9 /* CurcusData.swift in Sources */,
+				D105C014267BF9A600FFCDF9 /* CurcusUserData.swift in Sources */,
 				D105C022267BF9F700FFCDF9 /* SearchPage.swift in Sources */,
 				D105C019267BF9C200FFCDF9 /* School42Service.swift in Sources */,
 				D105C015267BF9A600FFCDF9 /* UserData.swift in Sources */,

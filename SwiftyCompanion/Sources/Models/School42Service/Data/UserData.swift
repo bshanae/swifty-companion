@@ -5,13 +5,15 @@ extension School42Service {
 		public var login: String
 		public var email: String
 		public var wallet: Int
-		public var curcusUsers: [CurcusData]
+		public var cursusUsers: [CurcusUserData]
+		public var projectsUsers: [ProjectUserData]
 		
 		enum CodingKeys: String, CodingKey {
 			case login
 			case email
 			case wallet
-			case curcusUsers = "curcus_users"
+			case cursusUsers = "cursus_users"
+			case projectsUsers = "projects_users"
 		}
 	}
 }

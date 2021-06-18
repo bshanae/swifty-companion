@@ -17,7 +17,7 @@ extension School42Service {
 		}
 
 		public var isExpired: Bool {
-			true
+			Date() >= expirationTime
 		}
 
 		private init(token: String, durationInSeconds: Int) {

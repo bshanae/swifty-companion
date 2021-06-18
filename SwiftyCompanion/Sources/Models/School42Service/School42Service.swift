@@ -40,8 +40,13 @@ struct School42Service {
 	}
 	
 	public static func findUser(_ user: String) {
-		if tokenWrapper?.isExpired != false {
-			print("[School42Service] Token is not set, can't find user")
+		if tokenWrapper == nil {
+			print("[School42Service] Token is not set yet")
+			return
+		}
+
+		if tokenWrapper!.isExpired {
+			print("[School42Service] Token expired, wait for a new token")
 			return
 		}
 
