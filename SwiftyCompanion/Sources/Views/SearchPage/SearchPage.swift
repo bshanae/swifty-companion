@@ -1,7 +1,7 @@
 import SwiftUI
 
-
 struct SearchPage: View {
+	@EnvironmentObject var school42Service: School42Service
 	@Binding public var text: String
 	
 	public var body: some View {
@@ -16,9 +16,13 @@ struct SearchPage: View {
 	}
 	
 	private var foreground: some View {
-		VStack(spacing: 120) {
+		let replaceWithLoader = Binding<Bool>{
+			!school42Service.isTokenValid
+		}
+
+		return VStack(spacing: 120) {
 			logo
-			SearchBar(text: $text, replaceWithLoader: .constant(false))
+			SearchBar(text: $text, replaceWithLoader: replaceWithLoader)
 		}
 	}
 	
@@ -35,6 +39,7 @@ struct SearchPage: View {
 struct SearchPage_Previews: PreviewProvider {
 	static var previews: some View {
 		SearchPage(text: .constant("Love Arina"))
+			.environmentObject(School42Service())
 			.keyboardType(.default)
 	}
 }

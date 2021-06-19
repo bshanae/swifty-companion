@@ -1,71 +1,40 @@
 import Foundation
-import Alamofire
 
-struct School42Service {
-	private static var tokenWrapper: TokenWrapper?
-	private static var isRefreshingToken: Bool = false
+class School42Service: ObservableObject{
+	private let updateInterval = 1.0
 	
-	public static func refreshToken() {
-		if isRefreshingToken {
-			print("Token is already requested, waiting for response")
-			return
-		}
-		
-		print("Requesting new token")
+	private let token: TokenWrapper
+	private weak var timer: Timer?
+	
+	@Published var isTokenValid: Bool = false
+	
+	public init() {
+		token = TokenWrapper()
+		timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true) { [weak self] _ in self?.update() }
 
-		tokenWrapper = nil
-		isRefreshingToken = true;
-		
-		let url = "https://api.intra.42.fr/oauth/token"
-		
-		let params = ["grant_type": "client_credentials",
-					  "client_id": "1cdd3068e50c016bcefebbf1c43b3bf150e86a94862ed4a602470de5253c1134",
-					  "client_secret": "64ec855a0d435a7e715e03a3ffb353ce35035b2d7b7a359690334d48c090e62f"]
-		
-		AF.request(url, method: .post, parameters: params)
-			.validate()
-			.responseDecodable(of: School42Service.AuthData.self) { (response) in
-				guard let authData = response.value else {
-					let errorDescription = String(describing: response.error)
-					print("[School42Service] Request token error : \(errorDescription)")
-					
-					isRefreshingToken = false
-					return
-				}
-				
-				print("[School42Service] Request token success")
-				tokenWrapper = TokenWrapper.wrap(authData.accessToken, forSeconds: authData.expiresIn)
-				isRefreshingToken = false
-			}
+		School42Service.requestToken(on: token, callOnResult: onTokenRequestResult)
 	}
-	
-	public static func findUser(_ user: String) {
-		if tokenWrapper == nil {
-			print("[School42Service] Token is not set yet")
-			return
+
+	deinit {
+		timer?.invalidate()
+	}
+
+	public func requestUser(_ user: String) {
+		if token.isValid {
+			School42Service.requestUser(user, using: token)
 		}
+	}
 
-		if tokenWrapper!.isExpired {
-			print("[School42Service] Token expired, wait for a new token")
-			return
+	private func update() {
+		if token.isSet && token.isExpired {
+			token.unset()
+			isTokenValid = false
+
+			School42Service.requestToken(on: token, callOnResult: onTokenRequestResult)
 		}
+	}
 
-		print("[School42Service] Requesting user")
-
-		let url = "https://api.intra.42.fr/v2/users/\(user)"
-		let headers = HTTPHeaders(["Authorization": "Bearer \(tokenWrapper!.token)"])
-
-		AF.request(url, method: .get, headers: headers)
-			.validate()
-			.responseDecodable(of: School42Service.UserData.self) { (response) in
-				guard let userData = response.value else {
-					let errorDescription = String(describing: response.error)
-					print("[School42Service] Request user error : \(errorDescription)")
-					return
-				}
-				
-				print("[School42Service] Request user success")
-				print(userData)
-			}
+	private func onTokenRequestResult(result: Bool) {
+		isTokenValid = result
 	}
 }

@@ -1,28 +1,34 @@
 import Foundation
 
 extension School42Service {
-	public struct TokenWrapper {
-		public static func wrap(_ token: String, forSeconds durationInSeconds: Int) -> TokenWrapper {
-			return TokenWrapper(
-				token: token,
-				durationInSeconds: durationInSeconds
-			)
+	public class TokenWrapper {
+		public func set(token: String, forSeconds durationInSeconds: Int) {
+			internalValue = token
+			expirationTime = TokenWrapper.getExpirationTime(durationInSeconds: durationInSeconds)
 		}
-
-		public let token: String
-		private let expirationTime: Date
-
+		
+		public func unset() {
+			internalValue = nil
+			expirationTime = nil
+		}
+		
+		public var internalValue: String?
+		private var expirationTime: Date?
+		
 		public var value: String? {
-			isExpired ? nil : token
+			isValid ? internalValue : nil
 		}
-
+		
+		public var isValid: Bool {
+			isSet && !isExpired
+		}
+		
+		public var isSet: Bool {
+			internalValue != nil && expirationTime != nil
+		}
+		
 		public var isExpired: Bool {
-			Date() >= expirationTime
-		}
-
-		private init(token: String, durationInSeconds: Int) {
-			self.token = token
-			self.expirationTime = TokenWrapper.getExpirationTime(durationInSeconds: durationInSeconds)
+			expirationTime != nil ? Date() >= expirationTime! : false
 		}
 		
 		private static func getExpirationTime(durationInSeconds: Int) -> Date {

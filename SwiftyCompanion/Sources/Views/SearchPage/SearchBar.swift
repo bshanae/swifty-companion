@@ -6,19 +6,23 @@ struct SearchBar: View {
 	@Binding private var text: String
 	@Binding private var replaceWithLoader: Bool
 	
-	@State private var buttonState: SearchButton.State
-	
 	public init(text: Binding<String>, replaceWithLoader: Binding<Bool>) {
 		self._text = text
 		self._replaceWithLoader = replaceWithLoader
-		
-		self.buttonState = .disabled
 	}
 	
 	public var body: some View {
-		HStack(spacing: 0) {
+		let buttonState = Binding<SearchButton.State>{
+			if replaceWithLoader {
+				return .loading
+			} else {
+				return text.isEmpty ? .disabled : .enabled
+			}
+		}
+	
+		return HStack(spacing: 0) {
 			textField
-			SearchButton(width: 50, height: 50, state: $buttonState)
+			SearchButton(width: 50, height: 50, state: buttonState)
 		}
 	}
 	
@@ -31,20 +35,11 @@ struct SearchBar: View {
 	
 	private var textField: some View {
 		TextField("", text: $text)
-			.onChange(of: text, perform: { _ in updateButtonState() })
 			.foregroundColor(.white)
 			.padding()
 			.frame(width: 200, height: 50)
 			.background(Rectangle().fill(textFieldBackground))
-			
-	}
-	
-	private func updateButtonState() {
-		if replaceWithLoader {
-			buttonState = .loading
-		} else {
-			buttonState = text.isEmpty ? .disabled : .enabled
-		}
+		
 	}
 }
 

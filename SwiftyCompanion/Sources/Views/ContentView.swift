@@ -1,10 +1,12 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State var text: String = ""
+	@StateObject private var school42Service: School42Service = School42Service()
+	@State private var text: String = ""
 	
     var body: some View {
 		SearchPage(text: $text)
+			.environmentObject(school42Service)
     }
 }
 
