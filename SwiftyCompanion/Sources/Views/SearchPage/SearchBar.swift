@@ -3,51 +3,58 @@ import SwiftUI
 struct SearchBar: View {
 	private let defaultText = "Type to start"
 	
-	@Binding public var text: String
-	@State private var isEditing: Bool = false
+	@Binding private var text: String
+	@Binding private var replaceWithLoader: Bool
+	
+	@State private var buttonState: SearchButton.State
+	
+	public init(text: Binding<String>, replaceWithLoader: Binding<Bool>) {
+		self._text = text
+		self._replaceWithLoader = replaceWithLoader
+		
+		self.buttonState = .disabled
+	}
 	
 	public var body: some View {
 		HStack(spacing: 0) {
-			magnifyingGlassImage
-
 			textField
-			
-			if isEditing {
-				cancelButton
-			}
+			SearchButton(width: 50, height: 50, state: $buttonState)
 		}
-		.background(Capsule().fill(Color(.systemGray6)))
 	}
 	
-	private var magnifyingGlassImage: some View {
-		Image(systemName: "magnifyingglass")
-			.foregroundColor(.gray)
-			.padding(.leading, 8)
-	}
+	private let textFieldBackground = Color(
+		red: 0.1,
+		green: 0.1,
+		blue: 0.1,
+		opacity: 0.5
+	)
 	
 	private var textField: some View {
-		TextField(defaultText, text: $text)
-			.padding(5)
-			.onTapGesture {
-				self.isEditing = true
-			}
-			.frame(minWidth: 0, maxWidth: .infinity)
+		TextField("", text: $text)
+			.onChange(of: text, perform: { _ in updateButtonState() })
+			.foregroundColor(.white)
+			.padding()
+			.frame(width: 200, height: 50)
+			.background(Rectangle().fill(textFieldBackground))
+			
 	}
 	
-	private var cancelButton: some View {
-		Button(action: {
-			self.text = ""
-		}) {
-			Image(systemName: "multiply.circle.fill")
-				.foregroundColor(.gray)
-				.padding(.trailing, 8)
+	private func updateButtonState() {
+		if replaceWithLoader {
+			buttonState = .loading
+		} else {
+			buttonState = text.isEmpty ? .disabled : .enabled
 		}
 	}
 }
 
 struct SearchBar_Previews: PreviewProvider {
 	static var previews: some View {
-		SearchBar(text: .constant("Love Arina"))
-			.padding()
+		ZStack {
+			Background()
+			
+			SearchBar(text: .constant(""), replaceWithLoader: .constant(true))
+				.padding()
+		}
 	}
 }

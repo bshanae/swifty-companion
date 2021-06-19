@@ -19,6 +19,8 @@
 		D105C01E267BF9EF00FFCDF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C01D267BF9EF00FFCDF9 /* ContentView.swift */; };
 		D105C021267BF9F700FFCDF9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C01F267BF9F700FFCDF9 /* SearchBar.swift */; };
 		D105C022267BF9F700FFCDF9 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C020267BF9F700FFCDF9 /* SearchPage.swift */; };
+		D105C027267D140200FFCDF9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C026267D140200FFCDF9 /* Background.swift */; };
+		D105C029267D162B00FFCDF9 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C028267D162B00FFCDF9 /* SearchButton.swift */; };
 		D11F09DA267A663C00B1A8A5 /* SwiftyCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */; };
 		D11F09DE267A663C00B1A8A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11F09DD267A663C00B1A8A5 /* Assets.xcassets */; };
 		D11F09E1267A663C00B1A8A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11F09E0267A663C00B1A8A5 /* Preview Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		D105C01D267BF9EF00FFCDF9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D105C01F267BF9F700FFCDF9 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D105C020267BF9F700FFCDF9 /* SearchPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
+		D105C026267D140200FFCDF9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		D105C028267D162B00FFCDF9 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		D11F09D6267A663C00B1A8A5 /* swifty-companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCompanionApp.swift; sourceTree = "<group>"; };
 		D11F09DD267A663C00B1A8A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,8 +104,9 @@
 		D105C023267BF9FB00FFCDF9 /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
-				D105C01F267BF9F700FFCDF9 /* SearchBar.swift */,
 				D105C020267BF9F700FFCDF9 /* SearchPage.swift */,
+				D105C01F267BF9F700FFCDF9 /* SearchBar.swift */,
+				D105C028267D162B00FFCDF9 /* SearchButton.swift */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -111,6 +116,14 @@
 			children = (
 			);
 			path = UserPage;
+			sourceTree = "<group>";
+		};
+		D105C025267D13E100FFCDF9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D105C026267D140200FFCDF9 /* Background.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		D11F09CD267A663C00B1A8A5 = {
@@ -166,6 +179,7 @@
 				D105C01D267BF9EF00FFCDF9 /* ContentView.swift */,
 				D105C023267BF9FB00FFCDF9 /* SearchPage */,
 				D105C024267BFA0500FFCDF9 /* UserPage */,
+				D105C025267D13E100FFCDF9 /* Tools */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,10 +321,12 @@
 				D105C015267BF9A600FFCDF9 /* UserData.swift in Sources */,
 				D105C011267BF9A600FFCDF9 /* AuthData.swift in Sources */,
 				D105C012267BF9A600FFCDF9 /* ProjectData.swift in Sources */,
+				D105C029267D162B00FFCDF9 /* SearchButton.swift in Sources */,
 				D105C01E267BF9EF00FFCDF9 /* ContentView.swift in Sources */,
 				D11F09DA267A663C00B1A8A5 /* SwiftyCompanionApp.swift in Sources */,
 				D105C013267BF9A600FFCDF9 /* SkillData.swift in Sources */,
 				D105C021267BF9F700FFCDF9 /* SearchBar.swift in Sources */,
+				D105C027267D140200FFCDF9 /* Background.swift in Sources */,
 				D105C01A267BF9C200FFCDF9 /* TokenWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
