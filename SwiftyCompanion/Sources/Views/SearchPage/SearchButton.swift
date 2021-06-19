@@ -1,20 +1,27 @@
 import SwiftUI
 
 struct SearchButton: View {
-	private let width: CGFloat
-	private let height: CGFloat
+	@Binding var state: State
 
 	public enum State {
 		case enabled
 		case disabled
 		case loading
 	}
+
+	private let width: CGFloat
+	private let height: CGFloat
+	private let pressed: () -> ()
 	
-	@Binding var state: State
-	
-	public init(width: CGFloat, height: CGFloat, state: Binding<State>) {
+	public init(
+		width: CGFloat,
+		height: CGFloat,
+		state: Binding<State>,
+		block: @escaping  () -> ()
+	) {
 		self.width = width
 		self.height = height
+		self.pressed = block
 		self._state = state
 	}
 	
@@ -33,28 +40,30 @@ struct SearchButton: View {
 	
 	private var currentContent: some View {
 		switch state {
-			case .enabled:
-				return AnyView(activeMagnifyingGlass)
-
-			case .disabled:
-				return AnyView(inactivedMagnifyingGlass)
-
-			case .loading:
-				return AnyView(progressView)
+		case .enabled:
+			return AnyView(enabledView)
+			
+		case .disabled:
+			return AnyView(disabledView)
+			
+		case .loading:
+			return AnyView(loadingView)
 		}
 	}
 	
-	private var activeMagnifyingGlass: some View {
-		Image(systemName: "magnifyingglass")
-			.foregroundColor(Color(.white))
+	private var enabledView: some View {
+		Button(action: pressed) {
+			Image(systemName: "magnifyingglass")
+				.foregroundColor(Color(.white))
+		}
 	}
-
-	private var inactivedMagnifyingGlass: some View {
+	
+	private var disabledView: some View {
 		Image(systemName: "magnifyingglass")
 			.foregroundColor(Color(.gray))
 	}
 	
-	private var progressView: some View {
+	private var loadingView: some View {
 		ProgressView()
 			.progressViewStyle(CircularProgressViewStyle(tint: Color(.white)))
 	}
@@ -68,7 +77,9 @@ struct SearchButton_Previews: PreviewProvider {
 				width: 50,
 				height: 50,
 				state: .constant(.loading)
-			)
+			) {
+
+			}
 		}
 	}
 }

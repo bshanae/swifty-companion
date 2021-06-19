@@ -23,6 +23,7 @@
 		D105C029267D162B00FFCDF9 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C028267D162B00FFCDF9 /* SearchButton.swift */; };
 		D105C02B267DE22F00FFCDF9 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C02A267DE22F00FFCDF9 /* Requests.swift */; };
 		D105C02D267DFBA200FFCDF9 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C02C267DFBA200FFCDF9 /* Binding.swift */; };
+		D105C031267E08DA00FFCDF9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C030267E08DA00FFCDF9 /* String.swift */; };
 		D11F09DA267A663C00B1A8A5 /* SwiftyCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */; };
 		D11F09DE267A663C00B1A8A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11F09DD267A663C00B1A8A5 /* Assets.xcassets */; };
 		D11F09E1267A663C00B1A8A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11F09E0267A663C00B1A8A5 /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		D105C028267D162B00FFCDF9 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		D105C02A267DE22F00FFCDF9 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		D105C02C267DFBA200FFCDF9 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		D105C030267E08DA00FFCDF9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D11F09D6267A663C00B1A8A5 /* swifty-companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCompanionApp.swift; sourceTree = "<group>"; };
 		D11F09DD267A663C00B1A8A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				D105C02C267DFBA200FFCDF9 /* Binding.swift */,
+				D105C030267E08DA00FFCDF9 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				D11F09DA267A663C00B1A8A5 /* SwiftyCompanionApp.swift in Sources */,
 				D105C013267BF9A600FFCDF9 /* SkillData.swift in Sources */,
 				D105C021267BF9F700FFCDF9 /* SearchBar.swift in Sources */,
+				D105C031267E08DA00FFCDF9 /* String.swift in Sources */,
 				D105C027267D140200FFCDF9 /* Background.swift in Sources */,
 				D105C01A267BF9C200FFCDF9 /* TokenWrapper.swift in Sources */,
 			);

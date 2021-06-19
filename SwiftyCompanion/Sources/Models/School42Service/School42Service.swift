@@ -5,6 +5,7 @@ class School42Service: ObservableObject{
 	
 	private let token: TokenWrapper
 	private weak var timer: Timer?
+	private var userRequestCallback: UserRequestCallback?
 	
 	@Published var isTokenValid: Bool = false
 	
@@ -19,9 +20,17 @@ class School42Service: ObservableObject{
 		timer?.invalidate()
 	}
 
-	public func requestUser(_ user: String) {
+	public func requestUser(
+		_ user: String,
+		callOnResult userRequestCallback: @escaping UserRequestCallback
+	) {
+		if !user.isAlpha {
+			userRequestCallback(nil, "Invalid user name")
+			return
+		}
+
 		if token.isValid {
-			School42Service.requestUser(user, using: token)
+			School42Service.requestUser(user, using: token, callOnResult: userRequestCallback)
 		}
 	}
 
@@ -34,7 +43,11 @@ class School42Service: ObservableObject{
 		}
 	}
 
-	private func onTokenRequestResult(result: Bool) {
+	private func onTokenRequestResult(result: Bool, error: String?) {
 		isTokenValid = result
+	}
+
+	private func onUserRequestResult(user: UserData?, error: String?) {
+		
 	}
 }

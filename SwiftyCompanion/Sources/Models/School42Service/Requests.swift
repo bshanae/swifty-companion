@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 
 extension School42Service {
-	public typealias TokenRequestCallback = (_ result: Bool) -> ()
+	public typealias TokenRequestCallback = (_ result: Bool, _ error: String?) -> ()
 	private static var isRequestingToken: Bool = false
 	
 	public static func requestToken(
@@ -31,33 +31,45 @@ extension School42Service {
 					print("[School42Service] Request token error : \(errorDescription)")
 					
 					isRequestingToken = false
-					resultCallback?(false)
+					resultCallback?(false, errorDescription)
 					return
 				}
 				
 				#if DEBUG
-				do { sleep(5) }
-				tokenWrapper.set(token: authData.accessToken, forSeconds: 20)
+				do { sleep(2) }
+				tokenWrapper.set(token: authData.accessToken, forSeconds: 30)
 				#else
 				tokenWrapper.set(token: authData.accessToken, forSeconds: authData.expiresIn)
 				#endif
 				
 				isRequestingToken = false
-				resultCallback?(true)
+				resultCallback?(true, nil)
 				
 				print("[School42Service] Request token success")
 			}
 	}
-	
+
+	public typealias UserRequestCallback = (_ user: UserData?, _ error: String?) -> ()
 	private static var isRequestingUser: Bool = false
 	
-	public static func requestUser(_ user: String, using tokenWrapper: TokenWrapper) {
-		if tokenWrapper.isValid {
+	public static func requestUser(
+		_ user: String,
+		using tokenWrapper: TokenWrapper,
+		callOnResult resultCallback: @escaping UserRequestCallback
+	) {
+		if !tokenWrapper.isValid {
 			print("[School42Service] Token wrapper doesn't has a valid token")
+			return
+		}
+
+		if isRequestingUser {
+			resultCallback(nil, "Previous request is not finished")
+			print("[School42Service] Already requesting a user")
 			return
 		}
 		
 		print("[School42Service] Requesting user")
+		isRequestingUser = true
 		
 		let url = "https://api.intra.42.fr/v2/users/\(user)"
 		let headers = HTTPHeaders(["Authorization": "Bearer \(tokenWrapper.value!)"])
@@ -68,10 +80,16 @@ extension School42Service {
 				guard let userData = response.value else {
 					let errorDescription = String(describing: response.error)
 					print("[School42Service] Request user error : \(errorDescription)")
+
+					isRequestingUser = false
+					resultCallback(nil, errorDescription)
 					return
 				}
-				
+
 				print("[School42Service] Request user success")
+				
+				isRequestingUser = false
+				resultCallback(userData, nil)
 			}
 	}
 }
