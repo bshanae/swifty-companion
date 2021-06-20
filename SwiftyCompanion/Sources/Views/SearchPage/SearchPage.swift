@@ -3,7 +3,7 @@ import SwiftUI
 struct SearchPage: View {
 	@EnvironmentObject var school42Service: School42Service
 	@Binding public var text: String
-
+	
 	private let userRequested: (String) -> ()
 	
 	public init(
@@ -13,18 +13,10 @@ struct SearchPage: View {
 		self._text = text;
 		self.userRequested = userRequested;
 	}
-
+	
 	public var body: some View {
-		foreground
-	}
-	
-	private var background: some View {
-		Background()
-	}
-	
-	private var foreground: some View {
 		let replaceWithLoader = Binding<Bool>{
-			!school42Service.isTokenValid
+			!school42Service.isTokenValid || school42Service.isRequestingUser
 		}
 		
 		return VStack(spacing: 120) {

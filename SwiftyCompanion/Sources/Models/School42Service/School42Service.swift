@@ -6,8 +6,9 @@ class School42Service: ObservableObject{
 	private let token: TokenWrapper
 	private weak var timer: Timer?
 	private var userRequestCallback: UserRequestCallback?
-	
+
 	@Published var isTokenValid: Bool = false
+	@Published var isRequestingUser: Bool = false
 	
 	public init() {
 		token = TokenWrapper()
@@ -30,7 +31,15 @@ class School42Service: ObservableObject{
 		}
 
 		if token.isValid {
-			School42Service.requestUser(user, using: token, callOnResult: userRequestCallback)
+			isRequestingUser = true
+			School42Service.requestUser(
+				user,
+				using: token,
+				callOnResult: { (user, error) in
+					self.isRequestingUser = false
+					userRequestCallback(user, error)
+				}
+			)
 		}
 	}
 
@@ -45,9 +54,5 @@ class School42Service: ObservableObject{
 
 	private func onTokenRequestResult(result: Bool, error: String?) {
 		isTokenValid = result
-	}
-
-	private func onUserRequestResult(user: UserData?, error: String?) {
-		
 	}
 }

@@ -49,7 +49,12 @@ struct SearchBar: View {
 			.foregroundColor(.white)
 			.padding()
 			.frame(width: 180, height: 50)
-			.background(Blur(backgroundColor: blurBackgroundColor))
+			.background(
+				Blur(
+					style: .systemUltraThinMaterial,
+					backgroundColor: blurBackgroundColor
+				)
+			)
 	}
 }
 

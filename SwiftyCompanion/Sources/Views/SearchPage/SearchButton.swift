@@ -26,9 +26,9 @@ struct SearchButton: View {
 	}
 	
 	private let backgroundColor = Color(
-		red: 0.16,
-		green: 0.16,
-		blue: 0.16,
+		red: 0.45,
+		green: 0.45,
+		blue: 0.45,
 		opacity: 0.95
 	)
 	
