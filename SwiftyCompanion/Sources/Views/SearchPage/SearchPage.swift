@@ -2,18 +2,20 @@ import SwiftUI
 
 struct SearchPage: View {
 	@EnvironmentObject var school42Service: School42Service
-	
+	@Binding public var text: String
+
 	private let userRequested: (String) -> ()
 	
-	public init(userRequested: @escaping (String) -> ()) {
+	public init(
+		text: Binding<String>,
+		userRequested: @escaping (String) -> ()
+	) {
+		self._text = text;
 		self.userRequested = userRequested;
 	}
-	
+
 	public var body: some View {
-		ZStack {
-			background
-			foreground
-		}
+		foreground
 	}
 	
 	private var background: some View {
@@ -27,26 +29,41 @@ struct SearchPage: View {
 		
 		return VStack(spacing: 120) {
 			logo
-			SearchBar(replaceWithLoader: replaceWithLoader) { userName in
+			SearchBar(
+				text: $text,
+				replaceWithLoader: replaceWithLoader
+			) { userName in
 				userRequested(userName)
 			}
 		}
 	}
 	
+	let logoColor = Color(
+		red: 0.8,
+		green: 0.8,
+		blue: 0.8
+	)
+	
 	private var logo: some View {
 		Image("logo")
 			.resizable()
+			.renderingMode(.template)
+			.foregroundColor(logoColor)
 			.aspectRatio(contentMode: .fit)
-			.frame(height: 130)
-			.font(.system(size: 100))
-			.foregroundColor(.white)
+			.frame(height: 140)
 	}
 }
 
 struct SearchPage_Previews: PreviewProvider {
 	static var previews: some View {
-		SearchPage() { _ in }
+		ZStack {
+			Background()
+			SearchPage(
+				text: .constant("")
+			) {
+				_ in
+			}
 			.environmentObject(School42Service())
-			.keyboardType(.default)
+		}
 	}
 }

@@ -1,8 +1,8 @@
 import Foundation
 
 extension School42Service {
-	public struct CurcusUserData: Decodable {
-		public var level: Float
+	public struct CursusUserData: Decodable {
+		public var level: Double
 		public var cursusId: Int
 		public var skills: [SkillData]
 		

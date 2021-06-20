@@ -1,13 +1,18 @@
 import SwiftUI
 
 struct SearchBar: View {
-	@State private var text: String = ""
+	@Binding private var text: String
 	@Binding private var replaceWithLoader: Bool
-
-	private let searchButtonPressed: (String) -> ()
 	
-	public init(replaceWithLoader: Binding<Bool>, block: @escaping (String) -> ()) {
-		self.searchButtonPressed = block
+	private let userRequested: (String) -> ()
+	
+	public init(
+		text: Binding<String>,
+		replaceWithLoader: Binding<Bool>,
+		block: @escaping (String) -> ()
+	) {
+		self._text = text
+		self.userRequested = block
 		self._replaceWithLoader = replaceWithLoader
 	}
 	
@@ -23,27 +28,28 @@ struct SearchBar: View {
 		return HStack(spacing: 0) {
 			textField
 			SearchButton(width: 50, height: 50, state: buttonState) {
-				searchButtonPressed(text)
+				userRequested(text)
 			}
 		}
+		.cornerRadius(2)
 	}
 	
-	private let textFieldBackground = Color(
+	private let blurBackgroundColor = UIColor(
 		red: 0.1,
 		green: 0.1,
 		blue: 0.1,
-		opacity: 0.5
+		alpha: 0.1
 	)
 	
 	private var textField: some View {
-		TextField("", text: $text)
-			.foregroundColor(.white)
-			.padding()
-			.frame(width: 200, height: 50)
-			.background(Rectangle().fill(textFieldBackground))
+		TextField("", text: $text, onCommit: { userRequested(text) })
 			.disableAutocorrection(true)
 			.autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-		
+			.accentColor(.white)
+			.foregroundColor(.white)
+			.padding()
+			.frame(width: 180, height: 50)
+			.background(Blur(backgroundColor: blurBackgroundColor))
 	}
 }
 
@@ -52,8 +58,13 @@ struct SearchBar_Previews: PreviewProvider {
 		ZStack {
 			Background()
 			
-			SearchBar(replaceWithLoader: .constant(true)) { _ in }
-				.padding()
+			SearchBar(
+				text: .constant(""),
+				replaceWithLoader: .constant(true)
+			) {
+				_ in
+				
+			}.padding()
 		}
 	}
 }

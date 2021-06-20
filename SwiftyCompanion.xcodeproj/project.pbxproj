@@ -12,7 +12,7 @@
 		D105C011267BF9A600FFCDF9 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00B267BF9A600FFCDF9 /* AuthData.swift */; };
 		D105C012267BF9A600FFCDF9 /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00C267BF9A600FFCDF9 /* ProjectData.swift */; };
 		D105C013267BF9A600FFCDF9 /* SkillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00D267BF9A600FFCDF9 /* SkillData.swift */; };
-		D105C014267BF9A600FFCDF9 /* CurcusUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00E267BF9A600FFCDF9 /* CurcusUserData.swift */; };
+		D105C014267BF9A600FFCDF9 /* CursusUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00E267BF9A600FFCDF9 /* CursusUserData.swift */; };
 		D105C015267BF9A600FFCDF9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C00F267BF9A600FFCDF9 /* UserData.swift */; };
 		D105C019267BF9C200FFCDF9 /* School42Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C017267BF9C200FFCDF9 /* School42Service.swift */; };
 		D105C01A267BF9C200FFCDF9 /* TokenWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C018267BF9C200FFCDF9 /* TokenWrapper.swift */; };
@@ -24,9 +24,26 @@
 		D105C02B267DE22F00FFCDF9 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C02A267DE22F00FFCDF9 /* Requests.swift */; };
 		D105C02D267DFBA200FFCDF9 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C02C267DFBA200FFCDF9 /* Binding.swift */; };
 		D105C031267E08DA00FFCDF9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C030267E08DA00FFCDF9 /* String.swift */; };
+		D105C033267E0C6700FFCDF9 /* MainPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C032267E0C6700FFCDF9 /* MainPanel.swift */; };
+		D105C036267E0D7B00FFCDF9 /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C035267E0D7B00FFCDF9 /* Blur.swift */; };
+		D105C03A267E5BAF00FFCDF9 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C039267E5BAF00FFCDF9 /* UserInfo.swift */; };
+		D105C03E267E644000FFCDF9 /* testUser.json in Resources */ = {isa = PBXBuildFile; fileRef = D105C03D267E644000FFCDF9 /* testUser.json */; };
+		D105C040267E645B00FFCDF9 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C03F267E645B00FFCDF9 /* FileLoader.swift */; };
+		D105C042267E664A00FFCDF9 /* UserSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C041267E664A00FFCDF9 /* UserSummary.swift */; };
+		D105C048267E732C00FFCDF9 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C047267E732C00FFCDF9 /* UserImage.swift */; };
+		D105C04A267E739600FFCDF9 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C049267E739600FFCDF9 /* UserLogin.swift */; };
+		D105C04C267E746000FFCDF9 /* UserPageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C04B267E746000FFCDF9 /* UserPageConfiguration.swift */; };
+		D105C04E267E767800FFCDF9 /* ProjectPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C04D267E767800FFCDF9 /* ProjectPanel.swift */; };
+		D105C051267E7E2500FFCDF9 /* ProjectStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C050267E7E2500FFCDF9 /* ProjectStatus.swift */; };
+		D105C053267E81E100FFCDF9 /* ProjectSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C052267E81E100FFCDF9 /* ProjectSummary.swift */; };
+		D105C055267E8B2B00FFCDF9 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C054267E8B2B00FFCDF9 /* Project.swift */; };
+		D105C057267E944300FFCDF9 /* UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C056267E944300FFCDF9 /* UserPage.swift */; };
 		D11F09DA267A663C00B1A8A5 /* SwiftyCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */; };
 		D11F09DE267A663C00B1A8A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11F09DD267A663C00B1A8A5 /* Assets.xcassets */; };
 		D11F09E1267A663C00B1A8A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11F09E0267A663C00B1A8A5 /* Preview Assets.xcassets */; };
+		D1855E5D267F90230037BACB /* SkillPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1855E5C267F90230037BACB /* SkillPanel.swift */; };
+		D1855E5F267F90820037BACB /* SkillSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1855E5E267F90820037BACB /* SkillSummary.swift */; };
+		D1855E61267F91AB0037BACB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1855E60267F91AB0037BACB /* Skill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +53,7 @@
 		D105C00B267BF9A600FFCDF9 /* AuthData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
 		D105C00C267BF9A600FFCDF9 /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
 		D105C00D267BF9A600FFCDF9 /* SkillData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillData.swift; sourceTree = "<group>"; };
-		D105C00E267BF9A600FFCDF9 /* CurcusUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurcusUserData.swift; sourceTree = "<group>"; };
+		D105C00E267BF9A600FFCDF9 /* CursusUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursusUserData.swift; sourceTree = "<group>"; };
 		D105C00F267BF9A600FFCDF9 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		D105C017267BF9C200FFCDF9 /* School42Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School42Service.swift; sourceTree = "<group>"; };
 		D105C018267BF9C200FFCDF9 /* TokenWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenWrapper.swift; sourceTree = "<group>"; };
@@ -48,11 +65,28 @@
 		D105C02A267DE22F00FFCDF9 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		D105C02C267DFBA200FFCDF9 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		D105C030267E08DA00FFCDF9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D105C032267E0C6700FFCDF9 /* MainPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPanel.swift; sourceTree = "<group>"; };
+		D105C035267E0D7B00FFCDF9 /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
+		D105C039267E5BAF00FFCDF9 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		D105C03D267E644000FFCDF9 /* testUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testUser.json; sourceTree = "<group>"; };
+		D105C03F267E645B00FFCDF9 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
+		D105C041267E664A00FFCDF9 /* UserSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSummary.swift; sourceTree = "<group>"; };
+		D105C047267E732C00FFCDF9 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		D105C049267E739600FFCDF9 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
+		D105C04B267E746000FFCDF9 /* UserPageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageConfiguration.swift; sourceTree = "<group>"; };
+		D105C04D267E767800FFCDF9 /* ProjectPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPanel.swift; sourceTree = "<group>"; };
+		D105C050267E7E2500FFCDF9 /* ProjectStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStatus.swift; sourceTree = "<group>"; };
+		D105C052267E81E100FFCDF9 /* ProjectSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummary.swift; sourceTree = "<group>"; };
+		D105C054267E8B2B00FFCDF9 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		D105C056267E944300FFCDF9 /* UserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPage.swift; sourceTree = "<group>"; };
 		D11F09D6267A663C00B1A8A5 /* swifty-companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyCompanionApp.swift; sourceTree = "<group>"; };
 		D11F09DD267A663C00B1A8A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D11F09E0267A663C00B1A8A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D11F09E2267A663C00B1A8A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1855E5C267F90230037BACB /* SkillPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillPanel.swift; sourceTree = "<group>"; };
+		D1855E5E267F90820037BACB /* SkillSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSummary.swift; sourceTree = "<group>"; };
+		D1855E60267F91AB0037BACB /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		DE84FEA721B25FA3F876529E /* Pods-swifty-companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swifty-companion.debug.xcconfig"; path = "Target Support Files/Pods-swifty-companion/Pods-swifty-companion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +115,7 @@
 			children = (
 				D105C00B267BF9A600FFCDF9 /* AuthData.swift */,
 				D105C00F267BF9A600FFCDF9 /* UserData.swift */,
-				D105C00E267BF9A600FFCDF9 /* CurcusUserData.swift */,
+				D105C00E267BF9A600FFCDF9 /* CursusUserData.swift */,
 				D105C00A267BF9A600FFCDF9 /* ProjectUserData.swift */,
 				D105C00C267BF9A600FFCDF9 /* ProjectData.swift */,
 				D105C00D267BF9A600FFCDF9 /* SkillData.swift */,
@@ -121,6 +155,11 @@
 		D105C024267BFA0500FFCDF9 /* UserPage */ = {
 			isa = PBXGroup;
 			children = (
+				D105C056267E944300FFCDF9 /* UserPage.swift */,
+				D105C04B267E746000FFCDF9 /* UserPageConfiguration.swift */,
+				D105C03B267E61D800FFCDF9 /* MainPanel */,
+				D105C04F267E7D9B00FFCDF9 /* ProjectPanel */,
+				D1855E5B267F8FF90037BACB /* SkillPanel */,
 			);
 			path = UserPage;
 			sourceTree = "<group>";
@@ -128,7 +167,8 @@
 		D105C025267D13E100FFCDF9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				D105C026267D140200FFCDF9 /* Background.swift */,
+				D105C044267E6B6100FFCDF9 /* Views */,
+				D105C045267E6B6A00FFCDF9 /* Summaries */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -137,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				D105C02F267DFCA300FFCDF9 /* Extensions */,
+				D105C03F267E645B00FFCDF9 /* FileLoader.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -148,6 +189,54 @@
 				D105C030267E08DA00FFCDF9 /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D105C03B267E61D800FFCDF9 /* MainPanel */ = {
+			isa = PBXGroup;
+			children = (
+				D105C032267E0C6700FFCDF9 /* MainPanel.swift */,
+				D105C047267E732C00FFCDF9 /* UserImage.swift */,
+				D105C049267E739600FFCDF9 /* UserLogin.swift */,
+				D105C039267E5BAF00FFCDF9 /* UserInfo.swift */,
+			);
+			path = MainPanel;
+			sourceTree = "<group>";
+		};
+		D105C03C267E643000FFCDF9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D105C03D267E644000FFCDF9 /* testUser.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D105C044267E6B6100FFCDF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D105C026267D140200FFCDF9 /* Background.swift */,
+				D105C035267E0D7B00FFCDF9 /* Blur.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D105C045267E6B6A00FFCDF9 /* Summaries */ = {
+			isa = PBXGroup;
+			children = (
+				D105C041267E664A00FFCDF9 /* UserSummary.swift */,
+				D105C052267E81E100FFCDF9 /* ProjectSummary.swift */,
+				D1855E5E267F90820037BACB /* SkillSummary.swift */,
+			);
+			path = Summaries;
+			sourceTree = "<group>";
+		};
+		D105C04F267E7D9B00FFCDF9 /* ProjectPanel */ = {
+			isa = PBXGroup;
+			children = (
+				D105C04D267E767800FFCDF9 /* ProjectPanel.swift */,
+				D105C054267E8B2B00FFCDF9 /* Project.swift */,
+				D105C050267E7E2500FFCDF9 /* ProjectStatus.swift */,
+			);
+			path = ProjectPanel;
 			sourceTree = "<group>";
 		};
 		D11F09CD267A663C00B1A8A5 = {
@@ -175,6 +264,7 @@
 				D11F09DD267A663C00B1A8A5 /* Assets.xcassets */,
 				D11F09DF267A663C00B1A8A5 /* Preview Content */,
 				D1659F9A267A686000614754 /* Sources */,
+				D105C03C267E643000FFCDF9 /* Resources */,
 			);
 			path = SwiftyCompanion;
 			sourceTree = "<group>";
@@ -215,6 +305,15 @@
 				D11F09D9267A663C00B1A8A5 /* SwiftyCompanionApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		D1855E5B267F8FF90037BACB /* SkillPanel */ = {
+			isa = PBXGroup;
+			children = (
+				D1855E5C267F90230037BACB /* SkillPanel.swift */,
+				D1855E60267F91AB0037BACB /* Skill.swift */,
+			);
+			path = SkillPanel;
 			sourceTree = "<group>";
 		};
 		F64656D64F626069F137447C /* Pods */ = {
@@ -285,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D105C03E267E644000FFCDF9 /* testUser.json in Resources */,
 				D11F09E1267A663C00B1A8A5 /* Preview Assets.xcassets in Resources */,
 				D11F09DE267A663C00B1A8A5 /* Assets.xcassets in Resources */,
 			);
@@ -339,23 +439,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D105C04C267E746000FFCDF9 /* UserPageConfiguration.swift in Sources */,
 				D105C010267BF9A600FFCDF9 /* ProjectUserData.swift in Sources */,
-				D105C014267BF9A600FFCDF9 /* CurcusUserData.swift in Sources */,
+				D105C048267E732C00FFCDF9 /* UserImage.swift in Sources */,
+				D105C04A267E739600FFCDF9 /* UserLogin.swift in Sources */,
+				D105C053267E81E100FFCDF9 /* ProjectSummary.swift in Sources */,
+				D105C03A267E5BAF00FFCDF9 /* UserInfo.swift in Sources */,
+				D105C014267BF9A600FFCDF9 /* CursusUserData.swift in Sources */,
 				D105C022267BF9F700FFCDF9 /* SearchPage.swift in Sources */,
 				D105C019267BF9C200FFCDF9 /* School42Service.swift in Sources */,
+				D1855E61267F91AB0037BACB /* Skill.swift in Sources */,
 				D105C015267BF9A600FFCDF9 /* UserData.swift in Sources */,
 				D105C011267BF9A600FFCDF9 /* AuthData.swift in Sources */,
 				D105C012267BF9A600FFCDF9 /* ProjectData.swift in Sources */,
 				D105C029267D162B00FFCDF9 /* SearchButton.swift in Sources */,
+				D105C040267E645B00FFCDF9 /* FileLoader.swift in Sources */,
+				D1855E5D267F90230037BACB /* SkillPanel.swift in Sources */,
+				D105C055267E8B2B00FFCDF9 /* Project.swift in Sources */,
+				D105C036267E0D7B00FFCDF9 /* Blur.swift in Sources */,
 				D105C02D267DFBA200FFCDF9 /* Binding.swift in Sources */,
 				D105C01E267BF9EF00FFCDF9 /* ContentView.swift in Sources */,
+				D105C04E267E767800FFCDF9 /* ProjectPanel.swift in Sources */,
 				D105C02B267DE22F00FFCDF9 /* Requests.swift in Sources */,
 				D11F09DA267A663C00B1A8A5 /* SwiftyCompanionApp.swift in Sources */,
+				D105C042267E664A00FFCDF9 /* UserSummary.swift in Sources */,
 				D105C013267BF9A600FFCDF9 /* SkillData.swift in Sources */,
+				D105C051267E7E2500FFCDF9 /* ProjectStatus.swift in Sources */,
 				D105C021267BF9F700FFCDF9 /* SearchBar.swift in Sources */,
+				D1855E5F267F90820037BACB /* SkillSummary.swift in Sources */,
 				D105C031267E08DA00FFCDF9 /* String.swift in Sources */,
 				D105C027267D140200FFCDF9 /* Background.swift in Sources */,
 				D105C01A267BF9C200FFCDF9 /* TokenWrapper.swift in Sources */,
+				D105C033267E0C6700FFCDF9 /* MainPanel.swift in Sources */,
+				D105C057267E944300FFCDF9 /* UserPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
