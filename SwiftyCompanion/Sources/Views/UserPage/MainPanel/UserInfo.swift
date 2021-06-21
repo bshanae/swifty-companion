@@ -17,7 +17,7 @@ extension MainPanel {
 
 				VStack(alignment: .leading, spacing: spacing) {
 					UserInfo.mainText("\(userData.level)")
-					UserInfo.mainText(userData.location)
+					UserInfo.mainText(userData.location ?? "-")
 					UserInfo.mainText("\(userData.wallet) ₳")
 				}
 				.frame(width: 80, alignment: .leading)

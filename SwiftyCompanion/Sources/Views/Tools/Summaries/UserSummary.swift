@@ -7,8 +7,8 @@ class UserSummary: ObservableObject {
 	
 	public let imageUrl: String
 	public let login: String
+	public let location: String?
 	public let level: Double
-	public let location: String
 	public let wallet: Int
 	public let projects: [ProjectSummary]
 	public let skills: [SkillSummary]
@@ -16,6 +16,7 @@ class UserSummary: ObservableObject {
 	public init(from userData: School42Service.UserData) throws {
 		self.imageUrl = userData.imageUrl
 		self.login = userData.login
+		self.location = userData.location
 		self.wallet = userData.wallet
 		
 		guard let currentCursus = UserSummary.getCurrentCursus(userData: userData)
@@ -24,7 +25,6 @@ class UserSummary: ObservableObject {
 		}
 		
 		self.level = currentCursus.level
-		self.location = "-"
 
 		self.projects = userData.projectsUsers
 			.filter{ project in project.cursusIds.contains(UserSummary.currentCursusId) }
