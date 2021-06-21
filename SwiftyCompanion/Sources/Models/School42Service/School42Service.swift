@@ -1,6 +1,6 @@
 import Foundation
 
-class School42Service: ObservableObject{
+class School42Service: ObservableObject {
 	private let updateInterval = 1.0
 	
 	private let token: TokenWrapper
