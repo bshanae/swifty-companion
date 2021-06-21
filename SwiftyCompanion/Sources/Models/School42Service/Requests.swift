@@ -82,7 +82,7 @@ extension School42Service {
 					print("[School42Service] Request user error : \(errorDescription)")
 
 					isRequestingUser = false
-					resultCallback(nil, errorDescription)
+					resultCallback(nil, "User not found")
 					return
 				}
 

@@ -35,9 +35,9 @@ struct SearchBar: View {
 	}
 	
 	private let blurBackgroundColor = UIColor(
-		red: 0.1,
-		green: 0.1,
-		blue: 0.1,
+		red: 0,
+		green: 0,
+		blue: 0,
 		alpha: 0.1
 	)
 	

@@ -15,13 +15,14 @@ public struct ContentView: View {
 	
 	@State private var user: UserSummary?
 	@State private var text: String = ""
+	@State private var error: String = ""
 	
 	@StateObject private var page: Page = .first()
 	@State private var pageTypes = [PageType.searchPage]
 	
 	public var body: some View {
 		ZStack {
-			Background()
+			Background().zIndex(0)
 			
 			Pager(
 				page: page,
@@ -31,8 +32,11 @@ public struct ContentView: View {
 			.allowsDragging(user != nil)
 			.expandPageToEdges()
 			.swipeInteractionArea(.allAvailable)
-			.onPageChanged{ pageIndex in
-				withAnimation { page.index += pageIndex }
+			.disabled(!error.isEmpty)
+			.zIndex(1)
+			
+			if !error.isEmpty {
+				errorMessage.zIndex(2)
 			}
 		}
 	}
@@ -66,32 +70,57 @@ public struct ContentView: View {
 		)
 	}
 	
+	private var errorMessage: some View {
+		ZStack {
+			Rectangle()
+				.foregroundColor(Color(white: 0, opacity: 0))
+				.background(Blur(style: .systemUltraThinMaterial))
+				.frame(width: 200, height: 200)
+				.cornerRadius(5)
+			
+			Text(error)
+				.font(.title2)
+				.foregroundColor(.white)
+		}
+	}
+	
 	private func onUserRequested(_ userName: String) {
 		user = nil
 		
 		school42Service.requestUser(userName) { (user, error) in
 			if user != nil {
-				print("user found!")
-				
 				do {
-					self.user = try UserSummary(from: user!)
-					
-					self.pageTypes.removeAll(where: { $0 == .userPage })
-					self.pageTypes.append(.userPage)
-					
-					// This is hack
-					DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1)) {
-						withAnimation {
-							self.page.update(Page.Update.new(index: 1))
-						}
-					}
-					
+					let userSymmary = try UserSummary(from: user!)
+					onUserRequestSuccess(user: userSymmary)
 				} catch {
-					print("Can't collect user summary")
+					onUserRequestFail(error: "Can't parse user info")
 				}
-				
 			} else {
-				print("user not found : \(error ?? "?")")
+				onUserRequestFail(error: error ?? "Unknown error")
+			}
+		}
+	}
+	
+	private func onUserRequestSuccess(user: UserSummary) {
+		self.user = user
+		
+		self.pageTypes.removeAll(where: { $0 == .userPage })
+		self.pageTypes.append(.userPage)
+		
+		// This is hack
+		DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1)) {
+			withAnimation {
+				self.page.update(Page.Update.new(index: 1))
+			}
+		}
+	}
+	
+	private func onUserRequestFail(error: String) {
+		self.error = error
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+			withAnimation {
+				self.error = ""
 			}
 		}
 	}

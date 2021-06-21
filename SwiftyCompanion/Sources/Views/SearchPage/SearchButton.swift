@@ -26,9 +26,9 @@ struct SearchButton: View {
 	}
 	
 	private let backgroundColor = Color(
-		red: 0.45,
-		green: 0.45,
-		blue: 0.45,
+		red: 0.5,
+		green: 0.5,
+		blue: 0.5,
 		opacity: 0.95
 	)
 	
@@ -58,9 +58,15 @@ struct SearchButton: View {
 		}
 	}
 	
+	private let disabledMagnifyingGlassColor = Color(
+		red: 0.3,
+		green: 0.3,
+		blue: 0.3
+	)
+	
 	private var disabledView: some View {
 		Image(systemName: "magnifyingglass")
-			.foregroundColor(Color(.gray))
+			.foregroundColor(disabledMagnifyingGlassColor)
 	}
 	
 	private var loadingView: some View {
