@@ -1,6 +1,6 @@
 # swifty-companion
 
-
+![](resources/1.gif)
 
 This project is an introduction to iOS development. One should create an app, that show info about 42 School student.
 
